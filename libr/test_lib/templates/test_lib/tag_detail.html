@@ -1,0 +1,13 @@
+{% extends 'test_lib/base_lib.html' %}
+
+{% block title %}
+        {{ tag.name_tag }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+        <h1>User_name with "{{ tag.name_tag }}" tag:</h1>
+
+        {% for users in tag.name_tag.all %}
+
+        {% endfor %}
+{% endblock %}

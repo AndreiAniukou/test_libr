@@ -1,0 +1,13 @@
+{% extends 'test_lib/base_lib.html' %}
+
+{% block title %}
+    Tag list - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <h1>Tags:</h1>
+
+    {% for tag in tags %}
+        <h3>{{ tag.name_tag }}</h3>
+    {% endfor %}
+{% endblock %}
