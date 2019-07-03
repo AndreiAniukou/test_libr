@@ -8,6 +8,6 @@
     <h1>Tags:</h1>
 
     {% for tag in tags %}
-        <h3>{{ tag.name_tag }}</h3>
+<h3><a href="{{ teg.get_absolute_url }}" {{ tag.name_tag }}</a></h3>
     {% endfor %}
 {% endblock %}
