@@ -27,3 +27,15 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name_tag
+
+
+class BookName(models.Model):
+    book_name = models.CharField(max_length=200, db_index=True)
+    slug = models.SlugField(max_length=150, unique=True)
+    body_text = models.TextField(blank=False, db_index=True)
+
+    def get_absolute_url(self):
+        return reverse('book_name_url', kwargs={'slug': self.slug})
+
+    def __str__(self):
+        return self.book_name

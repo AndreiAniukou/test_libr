@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 from django.views.generic import View
-from .models import User_name, Tag
+from .models import *
 from .utilits import ObjectDetailMixin
 from .forms import TagForm, UserForm
 
@@ -10,6 +10,18 @@ from .forms import TagForm, UserForm
 def users_list(request):
     users = User_name.objects.all()
     return render(request, 'test_lib/index.html', context={'users': users})
+
+def book_list(request):
+    book_name = BookName.objects.all()
+    return render(request, 'test_lib/book.html', context={'book_name': book_name})
+
+def book_detail(request, slug):
+    book = BookName.objects.get(slug_iexact=slug)
+    book = get_object_or_404(BookName, slug_iexact=slug)
+    return render(request, 'test_lib/book.html', context={'book', book})
+
+
+
 
 
 #def user_detail(request, slug):

@@ -14,7 +14,7 @@
     <div class="card-body">
     <h5 class="card-title"> {{ user.user_name }}</h5>
         <p class="card-text"> {{ user.body|truncatewords:15 }} </p>
-        <a href="{{ post.get_absolute_url }}" class="btn btn-primary"> Read </a>
+        <a href="{{ user_name.get_absolute_url }}" class="btn btn-primary"> Open </a>
     </div>
 </div>
 
